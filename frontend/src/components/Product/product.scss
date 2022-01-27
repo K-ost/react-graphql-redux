@@ -1,0 +1,21 @@
+/* product */
+.product {
+  border: 1px solid #ededed; padding: 10px 16px; border-radius: 8px; margin: 0 0 40px; display: flex;
+  flex-direction: column; transition: all 200ms ease-in-out;
+  &:hover {box-shadow: 0 2px 8px rgba(0,0,0,0.15);}
+  &_entry {flex: 1;}
+  &_img {
+    display: flex; align-items: center; justify-content: center; height: 160px; margin: 0 0 16px;
+    img {max-width: 100%; display: block; max-height: 140px;}
+  }
+  h2 {
+    margin: 0 0 12px; font-size: 16px; line-height: 20px;
+    a {color: inherit; display: block; text-decoration: none;}
+    a:hover {color: var(--color-blue);}
+  }
+  .static_rate_wrapper {margin: 10px 0;}
+  &_price {
+    color: #000; margin: 0 0 16px; font-weight: bold; font-size: 16px; line-height: 18px;
+    small {font-weight: normal; font-size: 13px; color: #717171;}
+  }
+}

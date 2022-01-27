@@ -1,0 +1,37 @@
+/* rating */
+.rating {
+  font-size: 24px; position: relative; display: block; margin: 20px 0;
+  &::before {content: '★★★★★'; display: block; color: #fff;}
+  &_stars {
+    display: inline-flex; flex-direction: row-reverse; position: absolute;
+    height: 100%; left: 0; top: 0; overflow: hidden;
+  }
+  input {position: absolute; width: 0; height: 0; left: 0; top: 0; opacity: 0; visibility: hidden;}
+  label {
+    flex: 0 0 20%; cursor: pointer; height: 100%; color: #ccc;
+    &::before {content: '★'; display: block; transition: color 200ms ease-in-out;}
+  }
+
+  input:checked, input:checked ~ label {color: #deb217;}
+
+  label:hover, label:hover ~ label,
+  label:checked ~ label:hover {color: #cf8523;}
+}
+
+/* static_rate */
+.static_rate {
+  position: relative; font-size: 12px; line-height: 20px; display: inline-flex; margin: 0 8px 0 0;
+  &.big {font-size: 22px; line-height: 22px; margin-right: 12px;}
+  &::before {content: '★★★★★'; display: block; color: #ccc;}
+  b {display: block; position: absolute; left: 0; top: 0; bottom: 0; width: 100%; font-weight: normal;}
+  b::before {content: ''; display: block; color: #cf8523;}
+  &.v1 b::before {content: '★';}
+  &.v2 b::before {content: '★★';}
+  &.v3 b::before {content: '★★★';}
+  &.v4 b::before {content: '★★★★';}
+  &.v5 b::before {content: '★★★★★';}
+  &_wrapper {
+    margin-top: 20px; display: flex; align-items: center;
+    p {margin: 0; font-size: 13px; line-height: 16px;}
+  }
+}

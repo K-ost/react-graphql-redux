@@ -1,0 +1,16 @@
+.reviews_list {
+  margin: 0 0 30px;
+  padding: 0;
+}
+.review {
+  border: 1px solid #ededed;
+  border-radius: 8px;
+  margin: 0 0 10px;
+  padding: 10px 16px;
+  list-style: none;
+  h4 {font-size: 20px; line-height: 22px; margin: 0 0 4px;}
+  small {display: block; margin: 0 0 14px;}
+  div {margin: 0;}
+  &_settings {padding-top: 10px;}
+  &_top {display: flex; align-items: flex-start; justify-content: space-between;}
+}

@@ -1,0 +1,178 @@
+* {box-sizing: border-box;}
+
+:root {
+  --color-blue: dodgerblue
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  color: #434343;
+  font-size: 14px;
+  line-height: 22px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.container {width: 100%; max-width: 1140px; margin: 0 auto; padding: 0 15px;}
+p {margin: 24px 0;}
+img {max-width: 100%;}
+a {color: var(--color-blue);}
+ul {margin: 0; padding: 0;}
+hr {background: #e3e3e3; border: 0; clear: both; height: 1px; margin: 30px 0; padding: 0;}
+.color-danger {color: #ff0000;}
+.color-success {color: green;}
+.list {margin-left: 20px;}
+.list li {list-style: inside disc;}
+.list.color-danger {font-size: 12px; line-height: 16px;}
+
+
+
+/* flex grid */
+.row {
+  display: flex; margin: 0 -10px; flex-wrap: wrap;
+}
+[class*='grid'] {padding: 0 10px; width: 100%;}
+.grid3 {flex: 0 0 25%; max-width: 25%;}
+.grid4 {flex: 0 0 33.333333%; max-width: 33.333333%;}
+.grid6 {flex: 0 0 50%; max-width: 50%;}
+.grid8 {flex: 0 0 66.666666%; max-width: 66.666666%;}
+
+
+/* forms */
+.btn, .nav li a {
+  background: rgb(18, 124, 231);
+  border: 0;
+  border-radius: 6px;
+  -webkit-appearance: none;
+  padding: 6px 16px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 20px;
+  min-height: 32px;
+  min-width: 34px;
+  outline: none;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  &-white {background: #f1f1f1; color: #333;}
+  &-red {background: rgb(192, 14, 14);}
+  &:disabled {cursor: default; opacity: 0.5;}
+}
+.nav li a {background: #f1f1f1; color: #333;}
+
+.btn-cart {
+  background-image: url(../assets/svg/cart.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 14px;
+  position: relative;
+  span {
+    background: red;
+    color: #fff;
+    font-size: 11px;
+    line-height: 16px;
+    min-width: 16px;
+    height: 16px;
+    padding: 0 3px;
+    text-align: center;
+    border-radius: 8px;
+    position: absolute;
+    top: -2px;
+    right: -2px;
+  }
+}
+.btn-user {
+  background-image: url(../assets/svg/lock.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 14px;
+  &.logged {background-image: url(../assets/svg/user.svg);}
+}
+
+
+
+
+/* reviewForm */
+.reviewForm {
+  border-radius: 10px; background: #f1f1f1; padding: 20px; margin: 0 0 30px;
+  h3 {margin-top: 0;}
+}
+
+
+/* authbox */
+.authbox {
+  background: #f1f1f1;
+  border-radius: 10px;
+  padding: 20px;
+  h2 {margin: 0 0 20px;}
+}
+
+
+/* header */
+.header {
+  background: #333; color: #fff; position: sticky; top: 0;
+  padding: 10px 16px; margin: 0 0 20px; z-index: 1000;
+  .container {display: flex; align-items: center; justify-content: space-between;}
+  &_div {display: flex; align-items: center;}
+  h1 {font-size: 24px; line-height: 26px; margin: 0 20px 0 0;}
+  .btn {margin-right: 5px;}
+  .btn:last-child {margin-right: 0;}
+}
+.nav {
+  display: flex; align-content: center; margin: 0 20px 0 0;
+  li {margin: 0 5px 0 0; padding: 0; list-style: none;}
+  li:last-child {margin: 0;}
+  li a.active {background: #d1d1d1;}
+}
+
+
+
+ul.all_comments li {
+  margin: 0 0 10px; border: 1px solid #ededed; padding: 10px 16px; border-radius: 8px; list-style: none;
+  &.active {background: #f3f3f3;}
+  a {color: #757575;}
+}
+
+.comment {
+  &_body {display: flex; align-items: center; justify-content: space-between;}
+  &EditForm {
+    padding-top: 10px; display: none;
+    &.open {display: block;}
+  }
+}
+
+
+.all_products .grid3 {margin-bottom: 20px;}
+.grid3 .product {min-height: 100%; margin: 0;}
+
+.product_page {position: relative;}
+.gallery {position: sticky; top: 70px;}
+
+
+
+/* product_page_text */
+.product_page_text {
+  position: relative; margin: 16px 0 6px;
+  p:first-child {margin-top: 0;}
+  &.short {
+    transition: max-height 200ms ease;
+    max-height: 110px;
+    overflow: hidden;
+    &::after {
+      background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+      content: '';
+      display: block;
+      position: absolute;
+      height: 60px;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      z-index: 100;
+    }
+    &.active::after {content: none; display: none;}
+  }
+}
+

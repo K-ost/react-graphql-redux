@@ -1,0 +1,29 @@
+.alert {
+  background: #f1f1f1;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 18px;
+  display: block;
+  margin: 20px 0;
+  padding: 10px 16px;
+  position: relative;
+  &.danger {background: #f76c6a; color: #fff;}
+  &.warning {background: #f7a239; color: #fff;}
+  &.success {background: #26992a; color: #fff;}
+  &.hide {display: none;}
+
+  button {
+    background: 0;
+    border: 0;
+    color: #000;
+    cursor: pointer;
+    font-size: 30px;
+    line-height: 30px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    -webkit-appearance: none;
+  }
+}
